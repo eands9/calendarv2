@@ -12,6 +12,7 @@
     "@aws-amplify/ui-vue": "^1.0.13",
     "aws-amplify": "^4.1.2",
     "core-js": "^3.6.5",
+    "tailwind": "^4.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",
