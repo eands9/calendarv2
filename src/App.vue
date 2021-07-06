@@ -17,7 +17,7 @@
           </v-icon>
         </v-btn>
       </router-link> -->
-      <!-- <v-spacer></v-spacer> -->
+      <v-spacer></v-spacer>
       <!-- <router-link to="/login">
         <v-btn v-if="!user" color="blue" class="white--text">
           Login
@@ -25,13 +25,13 @@
             mdi-login
           </v-icon>
         </v-btn>
-      </router-link>
+      </router-link> -->
       <v-btn v-if="user" @click="logout" color="black" class="white--text">
         <v-icon color="white">
           mdi-logout
         </v-icon>
         Logout
-      </v-btn> -->
+      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -43,7 +43,7 @@
 
 <script>
 // import Login from './components/Login.vue';
-// import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   // components: { Login },
   name: "App",
@@ -54,17 +54,17 @@ export default {
 //   mounted() {
 //     this.authAction();
 //   },
-//   computed: {
-//     ...mapGetters({
-//       user: "auth/user",
-//     }),
-//   },
-//   methods: {
-//     ...mapActions("auth", ["authAction"]),
-//     async logout() {
-//       await this.$store.dispatch("auth/logout");
-//       this.$router.push("/");
-//     },
-//   },
+  computed: {
+    ...mapGetters({
+      user: "auth/user",
+    }),
+  },
+  methods: {
+    ...mapActions("auth", ["authAction"]),
+    async logout() {
+      await this.$store.dispatch("auth/logout");
+      this.$router.push("/");
+    },
+  },
 };
 </script>
